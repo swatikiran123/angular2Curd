@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="jumbotron">
+      <h1>USER LIST</h1>
+      <button type="button" class="btn btn-success" (click)="newUser()">ADD USER</button></div>
+  <table class="table table-striped">
+   
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngIf="isNewUser">
+        <th><input type="text" name="firstName" id="firstName" [(ngModel)]="addNew.firstName"/></th>
+        <th><input type="text" name="lastName" id="lastName" [(ngModel)]="addNew.lastName"/></th>
+        <th><input type="email" name="email" id="email" [(ngModel)]="addNew.email"/></th>
+        <th><button type="button" class="btn btn-success" (click)="save(addNew)">Save</button></th>
+      </tr>
+    </thead>
+
+      <tbody *ngFor="let user of userList;let i=index">
+      <tr>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td>
+            <button type="button" class="btn .btn-danger" (click)="delete(i)">Delete</button>
+            <button type="button" class="btn .btn-info" (click)="edit(user,i)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
