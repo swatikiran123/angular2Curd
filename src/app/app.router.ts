@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router'; 
-import { AppComponent } from './app.component';
+import { AppComponentModule } from './app.component';
 
 @NgModule({
     imports: [
@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
         [
           {
             path: '',
-            component: AppComponent
+            component: AppComponentModule
           },
         ],
         { useHash: false }
